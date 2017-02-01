@@ -9,21 +9,23 @@ import simplejson
 
 from flask import Flask
 from flask import abort, request
+from flask_dotenv import DotEnv
 
-# from two1.wallet import Wallet
-# from two1.bitserv.flask import Payment
+from two1.wallet import Wallet
+from two1.bitserv.flask import Payment
 
 # Configure the app, wallet, and database
 app = Flask(__name__)
-# wallet = Wallet()
-# payment = Payment(app, wallet)
+env = DotEnv(app)
+wallet = Wallet()
+payment = Payment(app, wallet)
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('Gigs-dev')
+table = dynamodb.Table(app.config['DATABASE_TABLE'])
 
 
 # Charge a fixed fee of 100 satoshis per request to get a list of gigs
 @app.route('/on-demand-gigs')
-# @payment.required(100)
+@payment.required(100)
 def list():
     """Return a list of available gigs."""
     response = table.scan()
@@ -35,7 +37,7 @@ def list():
 
 # Charge a fixed fee of 1000 satoshis per request to create a new gig
 @app.route('/on-demand-gigs/new', methods=['POST'])
-# @payment.required(1000)
+@payment.required(5000)
 def create():
     """Create a new gig."""
     timestamp = int(time.time())
@@ -83,7 +85,7 @@ def create():
 
 # Charge a fixed fee of 100 satoshis per request to get a gig
 @app.route('/on-demand-gigs/<gig_id>')
-# @payment.required(100)
+@payment.required(100)
 def get(gig_id):
     """Return a gig."""
     response = table.get_item(
@@ -99,7 +101,7 @@ def get(gig_id):
 
 # Charge a fixed fee of 500 satoshis per request to update a gig
 @app.route('/on-demand-gigs/<gig_id>/update', methods=['PUT'])
-# @payment.required(100)
+@payment.required(100)
 def update(gig_id):
     """Update a gig."""
     timestamp = int(time.time())
@@ -180,7 +182,7 @@ def update(gig_id):
 
 # Charge a fixed fee of 10000 satoshis per request to delete a gig
 @app.route('/on-demand-gigs/<gig_id>/delete', methods=['DELETE'])
-# @payment.required(10000)
+@payment.required(10000)
 def delete(gig_id):
     """Delete a gig."""
     response = table.delete_item(

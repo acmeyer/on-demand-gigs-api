@@ -1,0 +1,17 @@
+info:
+  title: 'On-demand Gigs Data'
+  description: 'API for on-demand gig data.'
+  x-21-quick-buy: '21 buy alexmeyer/on-demand-gigs/on-demand-gigs'
+  x-21-category: markets
+  x-21-app-image:
+  x-21-total-price:
+    min: 100
+    max: 10000
+  contact:
+    name: Alex Meyer
+    email: acomeyer@gmail.com
+host:
+schemes:
+  - http
+basePath: /
+x-21-manifest-path: /manifest
