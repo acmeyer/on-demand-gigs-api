@@ -8,7 +8,7 @@ info:
   x-21-category: markets
   x-21-github-profile-url: https://github.com/acmeyer
   x-21-github-project-url: https://github.com/acmeyer/on-demand-gigs-api
-  x-21-quick-buy: '$ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs"
+  x-21-quick-buy: '$ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs"
 
     # Output: # [ #   { #     "locations": [ #       "San Francisco" #     ], #     "applicationUrl":
     "https://gorickshaw.com/couriers#apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
@@ -29,10 +29,13 @@ info:
     #   } # ]
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/new" --data ''{"companyName":
-    "Testing", "companyLogo": "https://www.google.com", "jobType": "Worker", "description":
-    "A cool new gig", "applicationUrl": "https://www.google.com/jobs2" }'' --maxprice
-    5000
+   $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/new" --data ''{"companyName": "Testing",
+      "companyLogo": "https://www.google.com",
+      "jobType": "Worker",
+      "description": "A cool new gig",
+      "applicationUrl": "https://www.google.com/jobs2"
+    }''
+    --maxprice 5000
 
     # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.google.com/jobs2",
     #     "roles": [], #     "requirements": [], #     "companyName": "Testing", #     "updatedAt":
@@ -40,7 +43,7 @@ info:
     1485534342912, #     "jobType": "Worker", #     "description": "A cool new gig",
     #     "id": "3f9d3000-44ad-11e6-965a-c91340947b7" #   }
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/get"
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/get"
 
     # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
     #     "roles": [ #       "Contract" #     ], #     "requirements": [], #     "companyName":
@@ -51,8 +54,8 @@ info:
     #   }
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update"
-    --data ''{"jobType": "Chef"}'' --maxprice 100
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update" --data ''{"jobType": "Chef"}''
+    --maxprice 100
 
     # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
     #     "roles": [ #       "Contract" #     ], #     "requirements": [], #     "companyName":
@@ -62,7 +65,7 @@ info:
     you share what you love.", #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
     #   }
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/delete"
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/delete"
     --maxprice 10000
 
     # Output: #   {}
