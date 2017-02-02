@@ -1,146 +1,87 @@
+basePath: /
+host: '[fcce:a977:eed7:77ee:bbe3:0000:0000:0001]:5000'
 info:
-  x-21-github-profile-url: 'https://github.com/acmeyer'
-  x-21-github-project-url: 'https://github.com/acmeyer/on-demand-gigs-api'
-  title: 'On-demand Gigs Data'
-  description: 'API for on-demand gig data.'
+  contact: {email: acomeyer@gmail.com, name: Alex Meyer}
+  description: API for on-demand gig data.
+  title: On-demand Gigs Data
+  x-21-app-image: https://s3.amazonaws.com/21co-gigs-api/21co-gigs-icon.png
+  x-21-category: markets
+  x-21-github-profile-url: https://github.com/acmeyer
+  x-21-github-project-url: https://github.com/acmeyer/on-demand-gigs-api
   x-21-quick-buy: '$ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs"
 
-    # Output:
-    # [
-    #   {
-    #     "locations": [
-    #       "San Francisco"
-    #     ],
-    #     "applicationUrl": "https://gorickshaw.com/couriers#apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
-    #     "roles": [
-    #       "Part-time"
-    #     ],
-    #     "requirements": [
-    #       "Car/Bike/Vehicle"
-    #     ],
-    #     "companyName": "Rickshaw",
-    #     "updatedAt": 1485534342998,
-    #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/358bb705969231c5361c7bcf35d56a6d_c1e9a66ae62466353641f26a20a5b198_gorickshawcom.png",
-    #     "createdAt": 1485534342998,
-    #     "jobType": "Delivery",
-    #     "description": "Rickshaw is a same-day delivery platform that allows businesses to schedule deliveries to their customers without the hassle of managing a fleet of cars and drivers. We aggregate demand across businesses to create dense, optimized routes, and match these routes with our network of delivery contractors.",
-    #     "id": "3faa4f60-e4ad-11e6-9c49-0d106c0226b2"
-    #   },
-    #   {
-    #     "locations": [],
-    #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
-    #     "roles": [
-    #       "Contract"
-    #     ],
-    #     "requirements": [],
-    #     "companyName": "Josephine",
-    #     "updatedAt": 1485534342912,
-    #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
-    #     "createdAt": 1485534342912,
-    #     "jobType": "Cook",
-    #     "description": "Feed Your Community\n\nCooking is about more than just food. We want to help you share what you love.",
-    #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
-    #   }
-    # ]
+    # Output: # [ #   { #     "locations": [ #       "San Francisco" #     ], #     "applicationUrl":
+    "https://gorickshaw.com/couriers#apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
+    #     "roles": [ #       "Part-time" #     ], #     "requirements": [ #       "Car/Bike/Vehicle"
+    #     ], #     "companyName": "Rickshaw", #     "updatedAt": 1485534342998, #     "companyLogo":
+    "https://thegigsaloon-production.s3.amazonaws.com/358bb705969231c5361c7bcf35d56a6d_c1e9a66ae62466353641f26a20a5b198_gorickshawcom.png",
+    #     "createdAt": 1485534342998, #     "jobType": "Delivery", #     "description":
+    "Rickshaw is a same-day delivery platform that allows businesses to schedule deliveries
+    to their customers without the hassle of managing a fleet of cars and drivers.
+    We aggregate demand across businesses to create dense, optimized routes, and match
+    these routes with our network of delivery contractors.", #     "id": "3faa4f60-e4ad-11e6-9c49-0d106c0226b2"
+    #   }, #   { #     "locations": [], #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
+    #     "roles": [ #       "Contract" #     ], #     "requirements": [], #     "companyName":
+    "Josephine", #     "updatedAt": 1485534342912, #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
+    #     "createdAt": 1485534342912, #     "jobType": "Cook", #     "description":
+    "Feed Your Community\n\nCooking is about more than just food. We want to help
+    you share what you love.", #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
+    #   } # ]
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/new" --data ''{"companyName": "Testing",
-      "companyLogo": "https://www.google.com",
-      "jobType": "Worker",
-      "description": "A cool new gig",
-      "applicationUrl": "https://www.google.com/jobs2"
-    }''
-    --maxprice 5000
+    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/new" --data ''{"companyName":
+    "Testing", "companyLogo": "https://www.google.com", "jobType": "Worker", "description":
+    "A cool new gig", "applicationUrl": "https://www.google.com/jobs2" }'' --maxprice
+    5000
 
-    # Output:
-    #   {
-    #     "locations": [],
-    #     "applicationUrl": "https://www.google.com/jobs2",
-    #     "roles": [],
-    #     "requirements": [],
-    #     "companyName": "Testing",
-    #     "updatedAt": 1485534342912,
-    #     "companyLogo": "https://www.google.com",
-    #     "createdAt": 1485534342912,
-    #     "jobType": "Worker",
-    #     "description": "A cool new gig",
-    #     "id": "3f9d3000-44ad-11e6-965a-c91340947b7"
-    #   }
+    # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.google.com/jobs2",
+    #     "roles": [], #     "requirements": [], #     "companyName": "Testing", #     "updatedAt":
+    1485534342912, #     "companyLogo": "https://www.google.com", #     "createdAt":
+    1485534342912, #     "jobType": "Worker", #     "description": "A cool new gig",
+    #     "id": "3f9d3000-44ad-11e6-965a-c91340947b7" #   }
 
     $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/get"
 
-    # Output:
-    #   {
-    #     "locations": [],
-    #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
-    #     "roles": [
-    #       "Contract"
-    #     ],
-    #     "requirements": [],
-    #     "companyName": "Josephine",
-    #     "updatedAt": 1485534342912,
-    #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
-    #     "createdAt": 1485534342912,
-    #     "jobType": "Cook",
-    #     "description": "Feed Your Community\n\nCooking is about more than just food. We want to help you share what you love.",
-    #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
+    # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
+    #     "roles": [ #       "Contract" #     ], #     "requirements": [], #     "companyName":
+    "Josephine", #     "updatedAt": 1485534342912, #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
+    #     "createdAt": 1485534342912, #     "jobType": "Cook", #     "description":
+    "Feed Your Community\n\nCooking is about more than just food. We want to help
+    you share what you love.", #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
     #   }
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update" --data ''{"jobType": "Chef"}''
-    --maxprice 100
+    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update"
+    --data ''{"jobType": "Chef"}'' --maxprice 100
 
-    # Output:
-    #   {
-    #     "locations": [],
-    #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
-    #     "roles": [
-    #       "Contract"
-    #     ],
-    #     "requirements": [],
-    #     "companyName": "Josephine",
-    #     "updatedAt": 1485534342912,
-    #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
-    #     "createdAt": 1485534342912,
-    #     "jobType": "Chef",
-    #     "description": "Feed Your Community\n\nCooking is about more than just food. We want to help you share what you love.",
-    #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
+    # Output: #   { #     "locations": [], #     "applicationUrl": "https://www.josephine.com/apply?utm_source=thegigsaloon&utm_medium=app&utm_campaign=thegigsaloon",
+    #     "roles": [ #       "Contract" #     ], #     "requirements": [], #     "companyName":
+    "Josephine", #     "updatedAt": 1485534342912, #     "companyLogo": "https://thegigsaloon-production.s3.amazonaws.com/5ebc04616de89b503c399a855c1ba49b_oJc6Mwdr_400x400.png",
+    #     "createdAt": 1485534342912, #     "jobType": "Chef", #     "description":
+    "Feed Your Community\n\nCooking is about more than just food. We want to help
+    you share what you love.", #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
     #   }
 
     $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/delete"
     --maxprice 10000
 
-    # Output:
-    #   {}
+    # Output: #   {}
 
     '
-  x-21-category: markets
-  x-21-app-image: 'https://s3.amazonaws.com/21co-gigs-api/21co-gigs-icon.png'
-  x-21-total-price:
-    min: 100
-    max: 10000
-  x-21-usage: 'This API is for interacting with a database of on-demand type gigs. Some examples of on-demand gigs are a driver for Uber or Lyft, or delivery for DoorDash. This API lets you interact with these gigs to use in any way you want.'
-  contact:
-    name: Alex Meyer
-    email: acomeyer@gmail.com
-host: '[fcce:a977:eed7:77ee:bbe3:0000:0000:0001]:5000'
-schemes:
-  - http
-basePath: /
-x-21-manifest-path: /manifest
+  x-21-total-price: {max: 10000, min: 100}
+  x-21-usage: This API is for interacting with a database of on-demand type gigs.
+    Some examples of on-demand gigs are a driver for Uber or Lyft, or delivery for
+    DoorDash. This API lets you interact with these gigs to use in any way you want.
 paths:
   /on-demand-gigs:
-    get:
-      summary: Gets all the on-demand gigs
-  /on-demand-gigs/new:
-    post:
-      summary: Creates a new on-demand gig
+    get: {summary: Gets all the on-demand gigs}
   /on-demand-gigs/<id>:
-    get:
-      summary: Gets the on-demand gig
-  /on-demand-gigs/<id>/update:
-    put:
-      summary: Updates the on-demand gig
+    get: {summary: Gets the on-demand gig}
   /on-demand-gigs/<id>/delete:
-    delete:
-      summary: Deletes an on-demand gig
+    delete: {summary: Deletes an on-demand gig}
+  /on-demand-gigs/<id>/update:
+    put: {summary: Updates the on-demand gig}
+  /on-demand-gigs/new:
+    post: {summary: Creates a new on-demand gig}
+schemes: [http]
+x-21-manifest-path: /manifest
