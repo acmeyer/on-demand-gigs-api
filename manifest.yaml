@@ -3,7 +3,7 @@ info:
   x-21-github-project-url: 'https://github.com/acmeyer/on-demand-gigs-api'
   title: 'On-demand Gigs Data'
   description: 'API for on-demand gig data.'
-  x-21-quick-buy: '$ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs"
+  x-21-quick-buy: '$ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs"
 
     # Output:
     # [
@@ -44,7 +44,7 @@ info:
     # ]
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/new" --data ''{"companyName": "Testing",
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/new" --data ''{"companyName": "Testing",
       "companyLogo": "https://www.google.com",
       "jobType": "Worker",
       "description": "A cool new gig",
@@ -67,7 +67,7 @@ info:
     #     "id": "3f9d3000-44ad-11e6-965a-c91340947b7"
     #   }
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/get"
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/get"
 
     # Output:
     #   {
@@ -87,7 +87,7 @@ info:
     #   }
 
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update" --data ''{"jobType": "Chef"}''
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/update" --data ''{"jobType": "Chef"}''
     --maxprice 100
 
     # Output:
@@ -107,7 +107,7 @@ info:
     #     "id": "3f9d3000-e4ad-11e6-965a-c9be240947b7"
     #   }
 
-    $ 21 buy "alexmeyer/on-demand-gigs/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/delete"
+    $ 21 buy "alexmeyer/on-demand-gigs-data/on-demand-gigs/3f9d3000-e4ad-11e6-965a-c9be240947b7/delete"
     --maxprice 10000
 
     # Output:
