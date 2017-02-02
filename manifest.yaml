@@ -123,7 +123,7 @@ info:
   contact:
     name: Alex Meyer
     email: acomeyer@gmail.com
-host: [fcce:a977:eed7:77ee:bbe3:0000:0000:0001]:5000
+host: '[fcce:a977:eed7:77ee:bbe3:0000:0000:0001]:5000'
 schemes:
   - http
 basePath: /
